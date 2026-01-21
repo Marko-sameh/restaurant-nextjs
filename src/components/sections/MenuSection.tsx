@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { Star, Plus, Heart, Clock } from "lucide-react"
+import { Star, Plus } from "lucide-react"
 import { MenuItem } from "@/types"
 import { useCartStore } from "@/store/cartStore"
 
@@ -97,20 +97,11 @@ const categories = [
 
 export default function MenuSection() {
   const [activeCategory, setActiveCategory] = useState("all")
-  const [favorites, setFavorites] = useState<string[]>([])
   const addItem = useCartStore((state) => state.addItem)
 
   const filteredItems = activeCategory === "all" 
     ? menuItems 
     : menuItems.filter(item => item.category === activeCategory)
-
-  const toggleFavorite = (itemId: string) => {
-    setFavorites(prev => 
-      prev.includes(itemId) 
-        ? prev.filter(id => id !== itemId)
-        : [...prev, itemId]
-    )
-  }
 
   return (
     <section 

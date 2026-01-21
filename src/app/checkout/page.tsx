@@ -31,7 +31,6 @@ export default function CheckoutPage() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<CheckoutFormData>({
     defaultValues: {
@@ -39,7 +38,7 @@ export default function CheckoutPage() {
     },
   })
 
-  const paymentMethod = watch("paymentMethod")
+  const [paymentMethod, setPaymentMethod] = useState<"cash" | "card">("cash")
 
   const onSubmit = async (data: CheckoutFormData) => {
     setIsProcessing(true)
@@ -139,12 +138,12 @@ export default function CheckoutPage() {
                   </h2>
                   <div className="space-y-3">
                     <label className="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-orange-500 transition-colors">
-                      <input {...register("paymentMethod")} type="radio" value="cash" className="w-4 h-4 text-orange-600" />
+                      <input {...register("paymentMethod")} type="radio" value="cash" className="w-4 h-4 text-orange-600" onChange={() => setPaymentMethod("cash")} />
                       <span className="ml-3 font-medium">Cash on Delivery</span>
                     </label>
 
                     <label className="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-orange-500 transition-colors">
-                      <input {...register("paymentMethod")} type="radio" value="card" className="w-4 h-4 text-orange-600" />
+                      <input {...register("paymentMethod")} type="radio" value="card" className="w-4 h-4 text-orange-600" onChange={() => setPaymentMethod("card")} />
                       <span className="ml-3 font-medium">Credit/Debit Card</span>
                     </label>
                   </div>

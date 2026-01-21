@@ -1,10 +1,16 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { CheckCircle, Home, Receipt } from "lucide-react"
 import Link from "next/link"
 
+function generateOrderId() {
+  return Math.random().toString(36).substring(2, 11).toUpperCase()
+}
+
 export default function OrderSuccessPage() {
+  const [orderId] = useState(() => generateOrderId())
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
       <motion.div
@@ -37,8 +43,8 @@ export default function OrderSuccessPage() {
           transition={{ delay: 0.4 }}
           className="text-gray-600 mb-8"
         >
-          Thank you for your order. We've received your order and will start preparing it shortly.
-          You'll receive a confirmation email soon.
+          Thank you for your order. We&apos;ve received your order and will start preparing it shortly.
+          You&apos;ll receive a confirmation email soon.
         </motion.p>
 
         <motion.div
@@ -52,7 +58,7 @@ export default function OrderSuccessPage() {
             <h2 className="text-lg font-semibold text-gray-900">Order Details</h2>
           </div>
           <p className="text-gray-600 text-sm">
-            Order ID: <span className="font-mono font-semibold">#{Math.random().toString(36).substr(2, 9).toUpperCase()}</span>
+            Order ID: <span className="font-mono font-semibold">#{orderId}</span>
           </p>
           <p className="text-gray-600 text-sm mt-2">
             Estimated Delivery: <span className="font-semibold">30-45 minutes</span>

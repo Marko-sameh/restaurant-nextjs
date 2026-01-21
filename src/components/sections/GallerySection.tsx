@@ -45,11 +45,6 @@ export default function GallerySection() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState(0);
 
-  const openLightbox = (index: number) => {
-    setLightboxImage(index);
-    setIsLightboxOpen(true);
-  };
-
   const nextLightboxImage = () => {
     setLightboxImage((prev) => (prev + 1) % galleryImages.length);
   };
@@ -143,12 +138,14 @@ export default function GallerySection() {
 
   useEffect(() => {
     updateSlider();
-    autoplayInterval.current = setInterval(nextSlide, 3000);
+    const interval = setInterval(nextSlide, 3000);
+    autoplayInterval.current = interval;
     return () => {
       if (autoplayInterval.current) {
         clearInterval(autoplayInterval.current);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

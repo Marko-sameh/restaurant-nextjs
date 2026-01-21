@@ -1,12 +1,10 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Facebook, Instagram, Youtube } from "lucide-react"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
-import type { Swiper as SwiperType } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -65,8 +63,6 @@ const teamMembers = [
 ]
 
 export default function TeamSection() {
-  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null)
-
   return (
     <section className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
@@ -118,7 +114,7 @@ export default function TeamSection() {
               slidesPerView: 3,
             },
           }}
-          onSwiper={setSwiperInstance}
+          onSwiper={() => {}}
           className="team-swiper mb-5"
         >
           {teamMembers.map((member) => (
