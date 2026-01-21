@@ -138,7 +138,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-300 text-sm sm:text-base text-center sm:text-left">
               Copyright © {currentYear}{" "}
-              <span className="text-orange-500 font-semibold">Indian Restaurant</span>.
+              <span className="text-orange-500 font-semibold">Marko Sameh</span>.
               All Rights Reserved.
             </p>
             <nav className="flex flex-wrap justify-center gap-4 sm:gap-6" aria-label="Legal links">

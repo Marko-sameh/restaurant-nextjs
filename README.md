@@ -29,9 +29,11 @@ A stunning, fully responsive restaurant website built with Next.js 14, TypeScrip
 - **Modern Neumorphic Design** - Elegant card designs with soft shadows and depth
 - **Smooth Animations** - Powered by Framer Motion for fluid transitions
 - **Interactive Parallax Effects** - Mouse-tracking parallax on hero section
+- **Gradient Backgrounds** - Animated gradient orbs and text effects
+- **Glassmorphism Effects** - Modern glassmorphic UI elements with backdrop blur
 - **Responsive Layout** - Mobile-first design that works on all devices
 - **Custom Scrollbar** - Styled scrollbar with gradient colors
-- **Glass Morphism Effects** - Modern glassmorphic UI elements
+- **Floating Animations** - Rotating food emojis with smooth transitions
 
 ### 🚀 Functionality
 - **Dynamic Menu System** - Filter dishes by category (Breakfast, Lunch, Dinner)
@@ -235,16 +237,22 @@ npm run lint
 - Wheel in right
 
 #### 2. HeroSection (`src/components/sections/HeroSection.tsx`)
+- Animated gradient background orbs
 - Parallax background elements (berry & leaf)
 - Mouse-tracking animations
-- Morphing image shape
-- Call-to-action buttons
-- Statistics display
+- Morphing image shape with glow effect
+- "Rated #1 in Mumbai" badge
+- Gradient call-to-action buttons with hover effects
+- Glassmorphic statistics cards with hover animations
+- Enhanced floating food emojis with rotation
+- Glassmorphic info card with ratings and reviews
 
 **Technologies:**
 - `useMotionValue` for mouse tracking
 - `useSpring` for smooth animations
 - `useTransform` for parallax effect
+- Gradient backgrounds and text
+- Backdrop blur effects
 
 #### 3. BrandsSection (`src/components/sections/BrandsSection.tsx`)
 - Company logos grid

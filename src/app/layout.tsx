@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import StructuredData from "@/components/StructuredData"
+import FAQStructuredData from "@/components/FAQStructuredData"
+import MenuItemStructuredData from "@/components/MenuItemStructuredData"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,8 +14,9 @@ const inter = Inter({
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://indianrestaurant.com"
-const siteName = "Indian Restaurant"
-const siteDescription = "Experience authentic Indian cuisine with fresh ingredients and traditional recipes. Open Monday-Thursday 9am-10pm, Friday-Sunday 11am-10pm. Call +91-8866998866 for reservations."
+const siteName = "Indian Restaurant Mumbai"
+const siteDescription = "🍛 Mumbai's #1 Indian Restaurant | 50+ Authentic Dishes | Free Delivery Over ₹500 | Order Now: +91-8866998866 | Open 9AM-10PM Mon-Thu, 11AM-10PM Fri-Sun | Veg & Non-Veg Options"
+const siteLocation = "Mumbai, Maharashtra"
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -25,26 +28,35 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} - Authentic Indian Cuisine & Fresh Ingredients`,
+    default: `Best Indian Restaurant in ${siteLocation} | Authentic Cuisine | Order Online`,
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
   keywords: [
-    "Indian restaurant",
+    // Location-specific keywords
+    "Indian restaurant Mumbai",
+    "best Indian food Mumbai",
+    "Indian restaurant near me",
+    "Mumbai Indian cuisine delivery",
+    "Indian restaurant Maharashtra",
+    "order Indian food online Mumbai",
+    // Dish-specific keywords
+    "authentic biryani Mumbai",
+    "tandoori chicken Mumbai",
+    "best curry restaurant Mumbai",
+    "paneer dishes Mumbai",
+    "naan bread Mumbai",
+    // Service keywords
+    "Indian food delivery Mumbai",
+    "Indian restaurant takeout",
+    "vegetarian Indian restaurant Mumbai",
+    "vegan Indian food Mumbai",
+    "halal Indian restaurant",
+    // Generic
     "authentic Indian cuisine",
+    "traditional Indian recipes",
     "fresh ingredients",
-    "traditional recipes",
-    "fine dining",
-    "takeout",
-    "delivery",
-    "vegetarian options",
-    "vegan options",
-    "spicy food",
-    "curry",
-    "naan",
-    "biryani",
-    "tandoori",
-    "Mumbai restaurant",
+    "fine dining Mumbai",
   ],
   authors: [{ name: siteName, url: siteUrl }],
   creator: siteName,
@@ -58,7 +70,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: `${siteName} - Authentic Indian Cuisine & Fresh Ingredients`,
+    title: `Best Indian Restaurant in ${siteLocation} | Order Online`,
     description: siteDescription,
     siteName: siteName,
     images: [
@@ -66,14 +78,14 @@ export const metadata: Metadata = {
         url: `${siteUrl}/images/main-b.jpg`,
         width: 1200,
         height: 630,
-        alt: `${siteName} - Delicious Indian Food`,
+        alt: `${siteName} - Authentic Indian Food in ${siteLocation}`,
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} - Authentic Indian Cuisine`,
+    title: `Best Indian Restaurant in ${siteLocation} | Order Online`,
     description: siteDescription,
     images: [`${siteUrl}/images/main-b.jpg`],
     creator: "@indianrestaurant",
@@ -117,6 +129,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <StructuredData />
+        <FAQStructuredData />
+        <MenuItemStructuredData />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />

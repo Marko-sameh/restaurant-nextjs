@@ -7,8 +7,9 @@ Disallow: /api/
 Disallow: /checkout/
 Disallow: /order-success/
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://indianrestaurant.com/sitemap.xml
+Sitemap: https://indianrestaurant.com/sitemap-images.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

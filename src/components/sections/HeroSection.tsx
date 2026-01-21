@@ -47,7 +47,7 @@ export default function HeroSection() {
   }, [mouseX, mouseY, isMobile])
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 sm:py-24 lg:py-28 pt-24 sm:pt-28 lg:pt-32">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 sm:py-24 lg:py-28 pt-24 sm:pt-28 lg:pt-16">
       {/* Parallax Background Elements - Hidden on mobile */}
       {!isMobile && (
         <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
@@ -109,14 +109,14 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="font-bold text-gray-900 leading-tight"
               style={{
-                fontSize: "clamp(2rem, 5vw + 1rem, 4.5rem)"
+                fontSize: "clamp(2rem, 5vw + 1rem, 2.5rem)"
               }}
             >
-              Welcome to our{" "}
+              Best Indian Restaurant in{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
-                Indian
+                Mumbai
               </span>{" "}
-              Restaurant
+              | Authentic Cuisine & Fresh Ingredients
             </motion.h1>
             
             <motion.p
@@ -196,7 +196,7 @@ export default function HeroSection() {
                   repeat: Infinity,
                   ease: "linear"
                 }}
-                className="relative overflow-hidden shadow-2xl mx-auto w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96"
+                className="relative overflow-hidden shadow-2xl mx-auto w-64 h-64 sm:w-80 sm:h-80 lg:w-[33rem] lg:h-[30rem]"
               >
                 <Image
                   src="/images/main-b.jpg"
