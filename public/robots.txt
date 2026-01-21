@@ -1,0 +1,14 @@
+# robots.txt for Indian Restaurant Website
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /checkout/
+Disallow: /order-success/
+
+# Sitemap location
+Sitemap: https://indianrestaurant.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
